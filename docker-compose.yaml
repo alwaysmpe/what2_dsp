@@ -1,0 +1,15 @@
+services:
+  jupyterlab-what:
+    build:
+      context: ./docker/what
+    image: juwhat
+    environment:
+      JUPYTER_ENABLE_LAB: "enable"
+    ports:
+      - "8888:8888"
+      - "8080:8080"
+    volumes:
+      - ./:/notebooks/
+#       - user_data:/home/jovyan
+# volumes:
+#   user_data:
