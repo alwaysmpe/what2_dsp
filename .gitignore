@@ -126,3 +126,4 @@ dmypy.json
 
 poetry.lock
 /notebooks/**/*.html
+/exp.py
