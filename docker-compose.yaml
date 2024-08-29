@@ -1,7 +1,5 @@
 services:
   jupyterlab-what:
-    build:
-      context: ./docker/what
     image: juwhat
     environment:
       JUPYTER_ENABLE_LAB: "enable"

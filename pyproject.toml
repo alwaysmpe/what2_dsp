@@ -15,11 +15,12 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
 scipy = "^1.14.1"
 numpy = "^2.1.0"
 altair = "^5.4.1"
 plotly = "^5.23.0"
+sounddevice = "^0.5.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
@@ -31,6 +32,7 @@ setuptools = "^70.2.0"
 basedpyright = "^1.12.6"
 toml = "^0.10.2"
 darglint2 = "^1.8.2"
+what2 = "^0.3.3"
 
 
 [build-system]
@@ -42,6 +44,8 @@ addopts = """\
 --doctest-modules \
 --doctest-ignore-import-errors \
 --ignore=tasks.py \
+--ignore=notebooks \
+--ignore=docker \
 --tb=short \
 """
 
@@ -56,12 +60,16 @@ exclude = [
     "**/.venv/",
     "./tasks.py",
     "./exp.py",
+    "./notebooks",
+    "./docker",
 ]
 ignore =  [
     "**/.ipynb_checkpoints/*",
     "**/.venv/",
     "./tasks.py",
     "./exp.py",
+    "./notebooks",
+    "./docker",
 ]
 
 [tool.ruff]
@@ -74,6 +82,8 @@ exclude = [
     "**/.venv/",
     "tasks.py",
     "/exp.py",
+    "./notebooks",
+    "./docker",
 ]
 
 [tool.ruff.format]

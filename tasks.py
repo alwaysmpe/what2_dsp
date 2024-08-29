@@ -7,19 +7,23 @@ from invoke.context import Context
 from functools import wraps
 from typing import Callable
 import inspect
-from what2 import dbg
 from pathlib import Path
+
 
 __all__ = [
     "pytest",
     "exp",
     "rufff",
     "mk_task",
+    "up",
+    "down",
+    "build",
 ]
+
+
 
 def find_task_dir(ctx: Context):
     cwd = Path(ctx.cwd).absolute()
-    dbg(cwd)
     while cwd.parent != cwd:
         tasks = cwd / 'tasks.py'
         if tasks.exists():
@@ -46,6 +50,35 @@ def mk_task(fn: Callable):
         cmd = fn(ctx, *args, **kwargs)
         return run(ctx, cmd)
     return wrapper
+
+@task
+def down(ctx: Context):
+    cmd = [
+        "docker",
+        "compose",
+        "down",
+    ]
+    return run(ctx, cmd)
+
+@task(down)
+def build(ctx: Context):
+    cmd = [
+        "docker",
+        "buildx",
+        "bake",
+    ]
+    return run(ctx, cmd)
+
+
+@task(build)
+def up(ctx: Context):
+    cmd = [
+        "docker",
+        "compose",
+        "up",
+        # "-d",
+    ]
+    return run(ctx, cmd)
 
 
 @mk_task

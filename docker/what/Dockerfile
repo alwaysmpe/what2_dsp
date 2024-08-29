@@ -1,4 +1,7 @@
-FROM quay.io/jupyter/minimal-notebook
+ARG REGISTRY=quay.io
+ARG OWNER=jupyter
+ARG BASE_CONTAINER=$REGISTRY/$OWNER/minimal-notebook
+FROM $BASE_CONTAINER
 
 USER root
 
