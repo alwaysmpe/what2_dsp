@@ -13,10 +13,10 @@ signals.
 
 The main technology in use (don't worry if you don't know what these are but you'll probably hear some of these names a lot in the professional world):
 
-Some tasks are automated using [Invoke](https://www.pyinvoke.org/)
-The package is configured using [Poetry](https://python-poetry.org/).
-Notebooks are run in [JupyterLab](https://jupyterlab.readthedocs.io/en/latest/).
-The notebook environment is managed using [Docker](https://www.docker.com/).
+* Some tasks are automated using [Invoke](https://www.pyinvoke.org/)
+* The package is configured using [Poetry](https://python-poetry.org/).
+* Notebooks are run in [JupyterLab](https://jupyterlab.readthedocs.io/en/latest/).
+* The notebook environment is managed using [Docker](https://www.docker.com/).
 
 ## Setup
 
