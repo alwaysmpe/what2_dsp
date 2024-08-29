@@ -20,6 +20,12 @@ The main technology in use (don't worry if you don't know what these are but you
 
 ## Setup
 
+Check out this repo and the associated submodules. With the git cli:
+```
+git clone --shallow-submodules --recursive https://github.com/alwaysmpe/what2_dsp.git
+```
+Or see the documentation for your git client of choice.
+
 ### Windows
 
 #### Simple
@@ -57,16 +63,22 @@ Install:
 
 ## Start/rebuild and restart jupyterlab
 
-run jupyterlab in docker (first build may
-take 5-10 minutes):
+run jupyterlab in docker (see below if first build fails):
 ```
 inv up
 ```
+
+If your first build fails, you're likely not on the latest version of docker
+(bake is experimental). Run each target in order:
+```
+docker buildx bake foundation
+docker buildx bake base-notebook
+docker buildx bake minimal-notebook
+docker buildx bake juwhat
+``` 
+
 connect to jupyterlab by opening `localhost:8888`
 in a browser.
-
-open `localhost:8888`in a browser.
-
 Open `notebooks/notebook.py` in jupyter then run all cells.
 
 To rebuild docker stack after changes to dockerfile,
