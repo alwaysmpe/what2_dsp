@@ -83,6 +83,7 @@ inv pytest
 
 ## TODO
 
+* fix autoreload?
 * fix spectrogram
 * [Sample audio](https://www2.cs.uic.edu/~i101/SoundFiles/)
 * load audio
