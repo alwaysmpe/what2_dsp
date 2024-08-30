@@ -14,7 +14,7 @@ target "foundation" {
 target "base-notebook" {
     context = "./docker/docker-stacks/images/base-notebook"
     contexts = {
-        foundation = "target:foundation"
+        docker-stacks-foundation = "target:foundation"
     }
     args = {
         BASE_CONTAINER = "docker-stacks-foundation"
@@ -25,7 +25,6 @@ target "base-notebook" {
 target "minimal-notebook" {
     context = "./docker/docker-stacks/images/minimal-notebook"
     contexts = {
-        foundation = "target:foundation"
         base-notebook = "target:base-notebook"
     }
 
@@ -38,8 +37,6 @@ target "minimal-notebook" {
 target "juwhat" {
     context = "./docker/what"
     contexts = {
-        foundation = "target:foundation"
-        base-notebook = "target:base-notebook"
         minimal-notebook = "target:minimal-notebook"
     }
     args = {

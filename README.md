@@ -33,12 +33,8 @@ Or see the documentation for your git client of choice.
 Install Docker desktop. In a command shell,
 open the repository directory and run
 (first build may take 5-10 minutes):
-<!-- docker desktop doesn't correctly resolve dependencies. -->
 ```
-docker buildx bake foundation
-docker buildx bake base-notebook
-docker buildx bake minimal-notebook
-docker buildx bake juwhat
+docker buildx bake
 docker compose up
 ```
 Connect to jupyterlab by opening `localhost:8888`
@@ -59,7 +55,7 @@ Install:
 * pipx (`pip install pipx`)
 * poetry (`pipx install poetry`)
 * invoke (`pipx install invoke`)
-* docker (if wsl, install under linux not windows)
+* docker
 
 ## Start/rebuild and restart jupyterlab
 
@@ -67,15 +63,6 @@ run jupyterlab in docker (see below if first build fails):
 ```
 inv up
 ```
-
-If your first build fails, you're likely not on the latest version of docker
-(bake is experimental). Run each target in order:
-```
-docker buildx bake foundation
-docker buildx bake base-notebook
-docker buildx bake minimal-notebook
-docker buildx bake juwhat
-``` 
 
 connect to jupyterlab by opening `localhost:8888`
 in a browser.
