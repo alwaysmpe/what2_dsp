@@ -59,7 +59,7 @@ Install:
 
 ## Start/rebuild and restart jupyterlab
 
-run jupyterlab in docker (see below if first build fails):
+run jupyterlab in docker:
 ```
 inv up
 ```
