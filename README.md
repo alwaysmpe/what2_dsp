@@ -31,6 +31,7 @@ docker compose up
 ```
 Connect to jupyterlab by opening `localhost:8888`
 in a browser.
+Open `notebooks/notebook.py` in jupyter then run all cells.
 
 ### Windows
 
