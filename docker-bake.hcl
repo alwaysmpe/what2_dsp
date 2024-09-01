@@ -3,7 +3,7 @@ group "default" {
 }
 
 target "foundation" {
-    context = "./docker/docker-stacks/images/docker-stacks-foundation"
+    context = "https://github.com/jupyter/docker-stacks.git#main:images/docker-stacks-foundation"
     args = {
         PYTHON_VERSION = "3.12"
     }
@@ -12,7 +12,7 @@ target "foundation" {
 
 
 target "base-notebook" {
-    context = "./docker/docker-stacks/images/base-notebook"
+    context = "https://github.com/jupyter/docker-stacks.git#main:images/base-notebook"
     contexts = {
         docker-stacks-foundation = "target:foundation"
     }
@@ -23,7 +23,7 @@ target "base-notebook" {
 }
 
 target "minimal-notebook" {
-    context = "./docker/docker-stacks/images/minimal-notebook"
+    context = "https://github.com/jupyter/docker-stacks.git#main:images/minimal-notebook"
     contexts = {
         base-notebook = "target:base-notebook"
     }
@@ -35,7 +35,7 @@ target "minimal-notebook" {
 }
 
 target "juwhat" {
-    context = "./docker/what"
+    context = "./docker/"
     contexts = {
         minimal-notebook = "target:minimal-notebook"
     }

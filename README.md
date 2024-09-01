@@ -20,17 +20,9 @@ The main technology in use (don't worry if you don't know what these are but you
 
 ## Setup
 
-Check out this repo and the associated submodules. With the git cli:
-```
-git clone --shallow-submodules --recursive https://github.com/alwaysmpe/what2_dsp.git
-```
-Or see the documentation for your git client of choice.
+### Simple
 
-### Windows
-
-#### Simple
-
-Install Docker desktop. In a command shell,
+Install Docker. In a command shell,
 open the repository directory and run
 (first build may take 5-10 minutes):
 ```
@@ -40,9 +32,7 @@ docker compose up
 Connect to jupyterlab by opening `localhost:8888`
 in a browser.
 
-All other instructions assume either linux or wsl.
-
-#### Complex
+### Windows
 
 Some experience/googling required.
 Setup WSL, follow the instructions for linux.
